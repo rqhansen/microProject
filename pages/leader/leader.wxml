@@ -1,0 +1,45 @@
+<view  class="container">
+  <view class="container-wrap">
+  <!--页标题  -->
+    <!--内容区域  -->
+    <scroll-view scroll-y="true" class="container-scroll" animation="{{animationData}}">
+      <view class="container-leader-title">
+        <text>领读</text>
+      </view>
+       <view wx:for="{{bookList}}" wx:for-item="item" wx:key="item" class="container-scroll-content">
+        <navigator url="authors/authors?authorname={{item.userName}}" hover-class="none">
+          <view class="container-scroll-content-item">
+              <image src="{{item.headImg}}" lazy-load="true"></image>
+              <text>{{item.userName}}</text>
+          </view>
+        </navigator>
+          
+        <navigator url="stories/stories?id={{index}}" hover-class="none">
+          <view class="container-scroll-content-banner-img">
+              <image src="{{item.bannerImg}}" mode="aspectFill" lazy-load="true"></image>
+            </view>
+
+          <view class="container-scroll-content-title"> 
+            <text>{{item.articTitle}}</text>
+          </view>
+          
+          <view class="container-scroll-content-introduct">
+            {{item.articContent}}
+          </view>
+
+          <view class="container-scroll-content-footer">
+            <view>
+              <text>{{item.clickTimes}}次点击</text>
+            </view>
+            <view class="container-scroll-content-footer-thumbe" data-index="{{index}}" bindtap="onThumb" >
+              <text>{{item.thumbUp}}</text>
+              <image src="{{item.thumbUrl}}" mode="aspectFill" lazy-load="true"></image>
+            </view>
+          </view>
+        </navigator>
+    </view> 
+    </scroll-view>
+    <!--内容区域结束  -->
+  </view>
+</view>
+

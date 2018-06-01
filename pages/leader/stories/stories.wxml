@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="container-content-head">
+    <view class="container-content-head-title">
+      {{authorInfo.articTitle}}
+    </view>
+    <view class="container-content-head-author">
+      <view class="lf">
+        <image src="{{authorInfo.headImg}}"></image>
+      </view>
+      <view class="center">
+        <text>{{authorInfo.userName}}</text>
+        <text>{{authorInfo.authorDes}}</text>
+      </view>
+      <view class="rt">关注</view>
+    </view>
+  </view>
+  <!--书籍推荐  -->
+  <view class="container-content-main">
+    <text>
+      {{authorInfo.text1}}
+    </text>
+    <image src="{{authorInfo.image1}}"></image>
+    <text>
+      {{authorInfo.text2}}
+    </text>
+    <image src="{{authorInfo.image2}}"></image>
+    <view>书籍推荐</view>
+  </view>
+  <view class="container-book-tip">
+    <view class="lf">
+      <view class="image-wrapper">
+        <image src="{{authorInfo.bookCover}}"></image>
+      </view>
+      <view class="author">
+        <view>{{authorInfo.bookName}}</view>
+        <view>{{authorInfo.bookAuthor}}</view>
+        <view>{{authorInfo.readerNum}}人在读</view>
+      </view>
+    </view>
+    <view class="rt">
+      开始阅读
+    </view>
+  </view>
+  <!--点赞  -->
+  <view class="container-content-thumber">
+    <view class='tp'>
+      <view class="lf">
+      更新于{{authorInfo.updateTime}}
+      </view>
+      <view class="rt">
+      举报
+      </view>
+    </view>
+    <view class="bottom">
+      <image src="../../../assets/images/thumb.png"></image>用生命点赞
+    </view>
+  </view>
+  <!--tab  -->
+  <view class="tab">
+    <view class="sub-tab">
+      <image src="../../../../assets/images/share.png"></image>
+    </view>
+    <view class="sub-tab">
+      <image src="../../../../assets/images/like.png"></image>
+    </view>
+    <view class="sub-tab">
+      <image src="../../../../assets/images/news.png"></image>
+    </view>
+  </view>
+</view>

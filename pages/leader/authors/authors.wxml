@@ -1,0 +1,3 @@
+<view class="container">
+  <view class="author-info">{{author}}</view>
+</view>
