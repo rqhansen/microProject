@@ -4,14 +4,16 @@
       {{authorInfo.articTitle}}
     </view>
     <view class="container-content-head-author">
-      <view class="lf">
-        <image src="{{authorInfo.headImg}}"></image>
-      </view>
+      <navigator url="../authors/authors?authorname={{authorInfo.userName}}" hover-class="none">
+        <view class="lf">
+            <image src="{{authorInfo.headImg}}" lazy-load="true"></image>
+        </view>
+      </navigator>
       <view class="center">
         <text>{{authorInfo.userName}}</text>
         <text>{{authorInfo.authorDes}}</text>
       </view>
-      <view class="rt">关注</view>
+      <view class="rt,{{isCare ? 'active-bg' : ''}}"  bindtap="changeBackground">{{isCare ? "已关注":"关注"}}</view>
     </view>
   </view>
   <!--书籍推荐  -->
@@ -19,17 +21,17 @@
     <text>
       {{authorInfo.text1}}
     </text>
-    <image src="{{authorInfo.image1}}"></image>
+    <image src="{{authorInfo.image1}}" lazy-load="true"></image>
     <text>
       {{authorInfo.text2}}
     </text>
-    <image src="{{authorInfo.image2}}"></image>
+    <image src="{{authorInfo.image2}}" lazy-load="true"></image>
     <view>书籍推荐</view>
   </view>
   <view class="container-book-tip">
     <view class="lf">
       <view class="image-wrapper">
-        <image src="{{authorInfo.bookCover}}"></image>
+        <image src="{{authorInfo.bookCover}}" lazy-load="true"></image>
       </view>
       <view class="author">
         <view>{{authorInfo.bookName}}</view>
@@ -37,7 +39,7 @@
         <view>{{authorInfo.readerNum}}人在读</view>
       </view>
     </view>
-    <view class="rt">
+    <view class="rt" bindtap="startRead">
       开始阅读
     </view>
   </view>
@@ -57,14 +59,14 @@
   </view>
   <!--tab  -->
   <view class="tab">
-    <view class="sub-tab">
-      <image src="../../../../assets/images/share.png"></image>
-    </view>
-    <view class="sub-tab">
+    <button class="sub-tab" open-type="share" plain="true" hover-class="tap-bg">
+        <image src="../../../../assets/images/share.png"></image>  
+    </button>
+    <button class="sub-tab" plain="true" hover-class="tap-bg">
       <image src="../../../../assets/images/like.png"></image>
-    </view>
-    <view class="sub-tab">
+    </button>
+    <button class="sub-tab" plain="true" hover-class="tap-bg">
       <image src="../../../../assets/images/news.png"></image>
-    </view>
+    </button>
   </view>
 </view>

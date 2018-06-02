@@ -1,4 +1,4 @@
-
+const util = require('../../utils/util.js');
 Page({
 
   /**
@@ -52,7 +52,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('onLoad');
+    // console.log('onLoad');
     this.setData({
       isReload : true
     })
@@ -64,14 +64,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log('onReady');
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('onShow');
+    
     if(this.data.isReload) {
       wx.showLoading({
         title: '加载中'
@@ -83,7 +83,6 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log('onHide');
     this.setData({
       isReload : false
     })
@@ -93,7 +92,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-      console.log('onUnload');
+      
   },
 
   /**
@@ -109,14 +108,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    var animation = wx.createAnimation({
-      duration: 1500,
-      timingFunction: 'ease',
-      delay: 0
-    })
-    this.animation = animation;
-    animation.translateY(-15).step();//动画一
-    animation.translateY(0).step();//动画二
+    let animation = util.toslideUp(); //上滑动画
     this.setData({
       animationData: animation
     })
@@ -134,8 +126,8 @@ Page({
   onShareAppMessage: function (res) {
     if (res.from === 'menu') {
       return {
-        title: '早睡早读书',
-        path:'/page/stack/stack'
+        title: '早读',
+        path:'/pages/stack/stack',
       }
     }
   }

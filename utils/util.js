@@ -14,6 +14,20 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+/**
+ * 上滑的偏移动画
+ */
+const toslideUp = () =>{
+  let animation = wx.createAnimation({
+    duration: 1500,
+    timingFunction: 'ease',
+    delay: 0
+  })
+  animation.translateY(-15).step();
+  animation.translateY(0).step();
+  return animation;
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  toslideUp: toslideUp
 }

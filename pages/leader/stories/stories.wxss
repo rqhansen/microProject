@@ -1,3 +1,4 @@
+
 .container-content-head {
   overflow:hidden;
   color: #444;
@@ -54,6 +55,11 @@
   color: #7d7d7d;
   border-radius:66rpx;
   border:1px solid #f0f0f0;
+}
+.container-content-head-author .active-bg {
+  background: #f66350;
+  color: #fff;
+  border-color: #f66350;
 }
 .container-content-main {
   padding: 0 40rpx;
@@ -166,6 +172,14 @@
    flex:1;
    text-align:center;
  }
+ .tab button.sub-tab {
+    background: #fff;
+    border:none;
+    border-radius: 0;
+}
+.tab .tap-bg {
+  background:red;
+}
  .tab image {
   width:66rpx;
   height: 66rpx;

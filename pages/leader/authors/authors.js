@@ -12,6 +12,12 @@ Page({
    */
   onLoad: function (options) {
     console.log('onLoad');
+    wx.showLoading({
+      title: '加载中',
+    })
+    setTimeout(() =>{
+      wx.hideLoading();
+    },200)
     this.setData({
       author: options.authorname
     })

@@ -12,7 +12,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "早睡早读书",
+    "navigationBarTitleText": "早读",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
