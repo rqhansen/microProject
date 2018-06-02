@@ -64,6 +64,13 @@
 .container-content-main {
   padding: 0 40rpx;
 }
+.container-content-main-no-content {
+  height:1030rpx;
+  text-align:center;
+  padding-top:380rpx;
+  font-weight:bold;
+  color:#000;
+}
 .container-content-main text {
   font-size: 32rpx;
   color:#454545;
@@ -136,14 +143,15 @@
   display:flex;
   flex-direction:row;
   justify-content:space-between;
-  margin-top: 20rpx;
   font-size:26rpx;
   color:#ccc;
 }
+.container-content-bottom {
+  margin-top: 70rpx;
+  margin-bottom:2px;
+}
 .container-content-thumber .bottom {
   display:inline-block;
-  margin-top: 90rpx;
-  margin-bottom:2px;
   width: 370rpx;
   height: 136rpx;
   border-radius:150rpx;
@@ -152,6 +160,7 @@
   background:#f66350;
   color: #fff;
   font-size: 32rpx;
+  border:none;
 }
 .container-content-thumber .bottom image {
   width: 48rpx;
@@ -173,9 +182,9 @@
    text-align:center;
  }
  .tab button.sub-tab {
-    background: #fff;
-    border:none;
-    border-radius: 0;
+   background: #fff;
+   border:none;
+   border-radius: 0;
 }
 .tab .tap-bg {
   background:red;

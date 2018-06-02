@@ -13,19 +13,19 @@
         <text>{{authorInfo.userName}}</text>
         <text>{{authorInfo.authorDes}}</text>
       </view>
-      <view class="rt,{{isCare ? 'active-bg' : ''}}"  bindtap="changeBackground">{{isCare ? "已关注":"关注"}}</view>
+      <view class="rt,{{isCare ? 'active-bg' : ''}}"  bindtap="changeBackground">{{isCare ? "已关注":"关注"}}      </view>
     </view>
   </view>
-  <!--书籍推荐  -->
   <view class="container-content-main">
-    <text>
-      {{authorInfo.text1}}
-    </text>
-    <image src="{{authorInfo.image1}}" lazy-load="true"></image>
-    <text>
-      {{authorInfo.text2}}
-    </text>
-    <image src="{{authorInfo.image2}}" lazy-load="true"></image>
+    <block wx:if="{{!authorInfo || !authorInfo.text1}}">
+      <view class="container-content-main-no-content"><text>暂无详细内容</text></view>
+    </block>
+    <block wx:elif="{{authorInfo && author.text1}}">
+      <text>{{authorInfo.text1}}</text>
+      <image src="{{authorInfo.image1}}" lazy-load="true"></image>
+      <text>{{authorInfo.text2}}</text>
+      <image src="{{authorInfo.image2}}" lazy-load="true"></image>
+    </block>
     <view>书籍推荐</view>
   </view>
   <view class="container-book-tip">
@@ -53,19 +53,21 @@
       举报
       </view>
     </view>
-    <view class="bottom">
-      <image src="../../../assets/images/thumb.png"></image>用生命点赞
-    </view>
+    <view class="container-content-bottom">
+      <button class="bottom" bindtap="deepThumb" plain="true">
+          <image src="../../../assets/images/thumb.png"></image>用生命点赞
+      </button>
+    </view>  
   </view>
   <!--tab  -->
   <view class="tab">
     <button class="sub-tab" open-type="share" plain="true" hover-class="tap-bg">
         <image src="../../../../assets/images/share.png"></image>  
     </button>
-    <button class="sub-tab" plain="true" hover-class="tap-bg">
-      <image src="../../../../assets/images/like.png"></image>
+    <button class="sub-tab" plain="true" hover-class="tap-bg" bindtap="like">
+      <image src="{{likeImgs[isLike*1]}}"></image>
     </button>
-    <button class="sub-tab" plain="true" hover-class="tap-bg">
+    <button class="sub-tab" plain="true" hover-class="tap-bg" bindtap="showTalk">
       <image src="../../../../assets/images/news.png"></image>
     </button>
   </view>

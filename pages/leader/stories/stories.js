@@ -1,15 +1,16 @@
 const util = require('../../../utils/util.js');
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    authorInfo: [],
-    article: [],
-    animationData: {},
-    isCare:false,
-    index: null
+    authorInfo: [],         //
+    animationData: {},  //动画
+    isCare:false,       //是否关注作者
+    index: null,        //文章索引
+    isLike: false,      //是否收藏
+    likeImgs: ['../../../../assets/images/like.png','../../../../assets/images/like_active.png'],
+    loading: false
   },
   
   /**
@@ -25,7 +26,7 @@ Page({
       success: function (res) {
         that.setData({
           authorInfo: res.data.data.index[index].articleInfo[0],
-          article: res.data.data.index[index].articleInfo,
+          // article: res.data.data.index[index].articleInfo,
           index: index
         })
         wx.hideLoading();
@@ -33,9 +34,42 @@ Page({
     })
   },
   /**
+   * 点赞
+   */
+  deepThumb: function () {
+
+  },
+  /**
+   * 查看评论
+   */
+  showTalk: function () {
+    wx.showModal({
+      title: '温馨提示',
+      content: '暂未开放',
+    })
+  },
+  /**
+   * 收藏文章
+   */
+  like: function () {
+      if (!this.data.isLike) {
+        wx.showToast({
+          title: '收藏成功'
+        })
+      } else {
+        wx.showToast({
+          title: '取消收藏',
+        })
+      }
+      this.setData({
+        isLike: !this.data.isLike
+      })
+  },
+
+  /**
    * 开始阅读
    */
-  startRead () {
+  startRead: function (){
     wx.showModal({
       title: '阅读提示',
       content: '请前往个人中心充值购买',
