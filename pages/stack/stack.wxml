@@ -1,3 +1,15 @@
-<view>
-<text>分类</text>
+<view class="container">
+  <view class="container-wrap" animation="{{animationData}}"> 
+      <view class="container-content" wx:for="{{stack}}" wx:for-item="item" wx:key="item">
+        <navigator class="container-content-navigator">
+          <view class="lt">
+            <image src="{{item.typeCover}}" mode='aspectFill'></image>
+            <text>{{item.bookTypes}}</text>
+          </view>
+          <view class="rt">
+            <text>{{item.bookNumb}}></text>
+          </view>
+        </navigator>
+      </view>
+   </view> 
 </view>

@@ -4,13 +4,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    authorInfo: [],         //
+    authorInfo: null,     
     animationData: {},  //动画
     isCare:false,       //是否关注作者
     index: null,        //文章索引
     isLike: false,      //是否收藏
     likeImgs: ['../../../../assets/images/like.png','../../../../assets/images/like_active.png'],
-    loading: false
+    isThumb: false
   },
   
   /**
@@ -37,7 +37,9 @@ Page({
    * 点赞
    */
   deepThumb: function () {
-
+      this.setData({
+        isThumb: !this.data.isThumb
+      })
   },
   /**
    * 查看评论
@@ -52,18 +54,21 @@ Page({
    * 收藏文章
    */
   like: function () {
-      if (!this.data.isLike) {
-        wx.showToast({
-          title: '收藏成功'
-        })
-      } else {
-        wx.showToast({
-          title: '取消收藏',
-        })
-      }
-      this.setData({
-        isLike: !this.data.isLike
+    if (!this.data.authorInfo || (this.data.authorInfo && !this.data.authorInfo.text1)) {
+       return 
+    }
+    if (!this.data.isLike) {
+      wx.showToast({
+        title: '收藏成功'
       })
+    } else {
+      wx.showToast({
+        title: '取消收藏',
+      })
+    }
+    this.setData({
+      isLike: !this.data.isLike
+    })
   },
 
   /**
@@ -137,6 +142,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (options) {
+    // if(options.from === 'button') { //来自页面内按钮点击
+
+    //}
     let shareObj = {
       title: '早读',
       imgUrl: '',
@@ -166,9 +174,6 @@ Page({
         })
       }
     }
-    // if(options.from === 'button') { //来自页面内按钮点击
-
-    //}
     return shareObj;
   }
 })

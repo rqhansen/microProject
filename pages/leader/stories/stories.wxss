@@ -165,8 +165,12 @@
 .container-content-thumber .bottom image {
   width: 48rpx;
   height: 48rpx;
-  vertical-align:-10rpx;
+  vertical-align:middle;
   margin-right:16rpx;
+}
+.container-content-thumber .bottom text {
+  display:inline-block;
+  vertical-align: middle;
 }
 .tab {
   position:fixed;

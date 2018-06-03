@@ -71,7 +71,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
     if(this.data.isReload) {
       wx.showLoading({
         title: '加载中'
@@ -99,21 +98,25 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-      this.getData(() =>{
-        wx.stopPullDownRefresh()
-      })
+    wx.showLoading({
+      title: '加载中',
+    })
+    this.getData(() =>{
+      wx.stopPullDownRefresh();
+      wx.hideLoading();
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.showLoading({
+      title: '加载中'
+    })
     let animation = util.toslideUp(); //上滑动画
     this.setData({
       animationData: animation
-    })
-    wx.showLoading({
-      title: '加载中'
     })
     this.getData(() =>{
       wx.hideLoading()

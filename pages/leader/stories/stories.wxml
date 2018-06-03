@@ -17,10 +17,10 @@
     </view>
   </view>
   <view class="container-content-main">
-    <block wx:if="{{!authorInfo || !authorInfo.text1}}">
+    <block wx:if="{{authorInfo && !authorInfo.text1}}">
       <view class="container-content-main-no-content"><text>暂无详细内容</text></view>
     </block>
-    <block wx:elif="{{authorInfo && author.text1}}">
+    <block wx:else>
       <text>{{authorInfo.text1}}</text>
       <image src="{{authorInfo.image1}}" lazy-load="true"></image>
       <text>{{authorInfo.text2}}</text>
@@ -54,8 +54,9 @@
       </view>
     </view>
     <view class="container-content-bottom">
-      <button class="bottom" bindtap="deepThumb" plain="true">
-          <image src="../../../assets/images/thumb.png"></image>用生命点赞
+      <button class="bottom" bindtap="deepThumb" plain="true" loading="{{loading}}">
+          <image wx:if="{{!isThumb}}" src="../../../assets/images/thumb.png"></image>
+          <text>{{isThumb ? "已赞" : "用生命点赞"}}</text>
       </button>
     </view>  
   </view>
