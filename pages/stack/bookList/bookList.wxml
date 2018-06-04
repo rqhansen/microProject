@@ -1,0 +1,11 @@
+<view>
+  <view>
+    <view wx:for="{{bookList}}">
+      <view class="lt">
+        <image url="{{bookList}}"></image>
+      </view>
+      <view class="rt">
+      </view>
+    </view>
+  </view>
+</view>

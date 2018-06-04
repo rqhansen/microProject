@@ -1,7 +1,7 @@
 <view class="container">
   <view class="container-wrap" animation="{{animationData}}"> 
       <view class="container-content" wx:for="{{stack}}" wx:for-item="item" wx:key="item">
-        <navigator class="container-content-navigator">
+        <navigator class="container-content-navigator" url="bookList/bookList?id={{index}}">
           <view class="lt">
             <image src="{{item.typeCover}}" mode='aspectFill'></image>
             <text>{{item.bookTypes}}</text>

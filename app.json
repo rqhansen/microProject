@@ -6,6 +6,7 @@
     "pages/leader/stories/stories",
     "pages/logs/logs",
     "pages/stack/stack",
+    "pages/stack/bookList/bookList",
     "pages/bookdesk/bookdesk",
     "pages/mine/mine"
   ],

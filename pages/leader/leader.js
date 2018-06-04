@@ -114,7 +114,7 @@ Page({
     wx.showLoading({
       title: '加载中'
     })
-    let animation = util.toslideUp(); //上滑动画
+    let animation = util.toslideUp(-15,0); //上滑动画
     this.setData({
       animationData: animation
     })
