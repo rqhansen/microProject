@@ -9,7 +9,7 @@ Page({
     isCare:false,       //是否关注作者
     index: null,        //文章索引
     isLike: false,      //是否收藏
-    likeImgs: ['../../../../assets/images/like.png','../../../../assets/images/like_active.png'],
+    likeImgs: ['../../../assets/images/like.png','../../../assets/images/like_active.png'],
     isThumb: false
   },
   
