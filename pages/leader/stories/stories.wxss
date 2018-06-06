@@ -1,4 +1,6 @@
-
+.container {
+  position:relative;
+}
 .container-content-head {
   overflow:hidden;
   color: #444;
@@ -179,19 +181,19 @@
   width:100%;
   border-top:1px solid #ebebeb;
   display:flex;
-  background:#fff;
+   background:#fff; 
  }
  .tab .sub-tab {
    flex:1;
    text-align:center;
  }
  .tab button.sub-tab {
-   background: #fff;
+   /* background: #fff; */
    border:none;
    border-radius: 0;
 }
 .tab .tap-bg {
-  background:red;
+  /* background:red; */
 }
  .tab image {
   width:66rpx;
