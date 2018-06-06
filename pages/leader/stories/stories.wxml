@@ -63,13 +63,13 @@
   <!--tab  -->
   <view class="tab">
     <button class="sub-tab" open-type="share" plain="true" hover-class="tap-bg">
-        <image src="../../../../assets/images/share.png"></image>  
+        <image src="../../../assets/images/share.png"></image>  
     </button>
     <button class="sub-tab" plain="true" hover-class="tap-bg" bindtap="like">
       <image src="{{likeImgs[isLike*1]}}"></image>
     </button>
     <button class="sub-tab" plain="true" hover-class="tap-bg" bindtap="showTalk">
-      <image src="../../../../assets/images/news.png"></image>
+      <image src="../../../assets/images/news.png"></image>
     </button>
   </view>
 </view>

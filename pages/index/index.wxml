@@ -13,6 +13,6 @@
 </view> -->
 <view class="containers">
   <view class="start">
-    <image src="../../assets/images/start.jpg" mode="aspectFill"></image>
+    <image src="../../assets/images/start.jpg" mode='aspectFill'></image>
   </view>
 </view>

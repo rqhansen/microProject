@@ -1,14 +1,14 @@
 <view class="container">
   <view class="container-wrap">
-    <view class="container-list" wx:for="{{bookList}}" wx:key="{{item}}">
-      <view class="lf">
-        <image src="{{item.bookCover}}"></image>
+      <view class="container-list" wx:for="{{bookList}}" wx:key="{{item}}" bindtap="bindViewTap">
+        <view class="lf">
+          <image src="{{item.bookCover}}"></image>
+        </view>
+        <view class="rt">
+          <view class="name"><text>{{item.bookName}}</text></view>
+          <view class="author"><text>{{item.authorName}}</text></view>
+          <view class="desc"><text>{{item.bookDes}}</text></view>
+        </view>
       </view>
-      <view class="rt">
-        <view class="name"><text>{{item.bookName}}</text></view>
-        <view class="author"><text>{{item.authorName}}</text></view>
-        <view class="desc"><text>{{item.bookDes}}</text></view>
-      </view>
-    </view>
   </view>
 </view>

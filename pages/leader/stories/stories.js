@@ -9,7 +9,7 @@ Page({
     isCare:false,       //是否关注作者
     index: null,        //文章索引
     isLike: false,      //是否收藏
-    likeImgs: ['../../../../assets/images/like.png','../../../../assets/images/like_active.png'],
+    likeImgs: ['../../../assets/images/like.png','../../../assets/images/like_active.png'],
     isThumb: false
   },
   
@@ -150,28 +150,7 @@ Page({
       imgUrl: '',
       path: `/pages/leader/stories/stories?id=${this.data.index}`,
       success: function (res) { //成功的回调
-        wx.showModal({
-          title: '成功分享',
-          content: res,
-        })
-      },
-      fail: function (res) {
-        wx.showModal({
-          title: '分享失败',
-          content: res,
-        })
-      },
-      cancel: function (res) {
-        wx.showModal({
-          title: '分享取消',
-          content: res,
-        })
-      },
-      complete: function (res) {
-        wx.showModal({
-          title: '分享了',
-          content: res,
-        })
+        console.log(res);
       }
     }
     return shareObj;

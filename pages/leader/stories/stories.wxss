@@ -149,8 +149,7 @@
   color:#ccc;
 }
 .container-content-bottom {
-  margin-top: 70rpx;
-  margin-bottom:2px;
+  margin-top: 90rpx;
 }
 .container-content-thumber .bottom {
   display:inline-block;

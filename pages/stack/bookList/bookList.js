@@ -7,6 +7,14 @@ Page({
     bookList: [],
   },
   /**
+   * 书籍详情调到log页
+   */
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../../logs/logs',
+    })
+  },
+  /**
    * 获取数据
    */
   getData: function (callback,index) {
@@ -85,5 +93,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  }
+  },
 })

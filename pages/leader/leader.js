@@ -127,10 +127,39 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    if (res.from === 'menu') {
-      return {
-        title: '早读',
-        path:'/pages/stack/stack',
+    // if (res.from === 'menu') {
+    //   return {
+    //     title: '早读',
+    //     path:'/pages/stack/stack',
+    //   }
+    // }
+    let shareObj = {
+      title: '早读',
+      imgUrl: '',
+      path: `/pages/leader/leader`,
+      success: function (res) { //成功的回调
+        wx.showModal({
+          title: '成功分享',
+          content: res,
+        })
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: '分享失败',
+          content: res,
+        })
+      },
+      cancel: function (res) {
+        wx.showModal({
+          title: '分享取消',
+          content: res,
+        })
+      },
+      complete: function (res) {
+        wx.showModal({
+          title: '分享了',
+          content: res,
+        })
       }
     }
   }
