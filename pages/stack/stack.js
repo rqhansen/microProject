@@ -12,7 +12,8 @@ Page({
     arr: [],
     arrHeight:[],
     animationData: '',
-    defaultImage: '../../assets/images/start.jpg'
+    defaultImage: '../../assets/images/start.jpg',
+    hasRefreshResult: true
   },
   /**
    * 获取数据
@@ -36,6 +37,17 @@ Page({
    * 初始化数据
    */
   init: function (data,flag) {
+    if(data.stack.length === this.data.stack.length){
+      this.setData({
+        hasRefreshResult: false
+      })
+      setTimeout(() => {
+        this.setData({
+          hasRefreshResult: true
+        })
+      }, 1500)
+      return 
+    }
     let that = this;
     wx.getSystemInfo({ //异步？
       success: function (res) {
@@ -116,10 +128,10 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    // let animation = util.toslideUp(-15,0);
-    // this.setData({
-    //   animationData: animation
-    // })
+    let animation = util.toslideUp(-15,0);
+    this.setData({
+      animationData: animation
+    })
     this.getData(this.init,true);
   },
 

@@ -1,4 +1,6 @@
 <view  class="container">
+<!--没有更多内容的提示-->
+  <refresh-tip wx:if="{{!hasRefreshResult}}"></refresh-tip>
   <view class="container-wrap">
   <!--页标题  -->
     <!--内容区域  -->

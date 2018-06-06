@@ -1,4 +1,6 @@
 <view class="container">
+  <!--没有更多内容的提示-->
+  <refresh-tip wx:if="{{!hasRefreshResult}}"></refresh-tip>
   <view class="container-wrap" animation="{{animationData}}"> 
       <view class="container-content" wx:for="{{stack}}" wx:for-item="item" wx:key="item">
         <navigator class="container-content-navigator" url="bookList/bookList?id={{index}}">

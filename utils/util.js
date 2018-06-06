@@ -25,7 +25,7 @@ const toslideUp = (start,end) =>{
     timingFunction:'ease-in-out'
   })
   animation.translateY(start).step();
-  animation.translateY(end).step();
+  // animation.translateY(end).step();
   return animation;
 }
 module.exports = {
