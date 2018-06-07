@@ -21,10 +21,11 @@ const toslideUp = (start,end) =>{
   let animation = wx.createAnimation({
     duration: 1500,
     timingFunction: 'ease',
-    delay: 0
+    delay: 10,
+    timingFunction:'ease-in-out'
   })
   animation.translateY(start).step();
-  animation.translateY(end).step();
+  // animation.translateY(end).step();
   return animation;
 }
 module.exports = {

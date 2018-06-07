@@ -1,9 +1,11 @@
 <view class="container">
+  <!--没有更多内容的提示-->
+  <refresh-tip wx:if="{{!hasRefreshResult}}"></refresh-tip>
   <view class="container-wrap" animation="{{animationData}}"> 
       <view class="container-content" wx:for="{{stack}}" wx:for-item="item" wx:key="item">
         <navigator class="container-content-navigator" url="bookList/bookList?id={{index}}">
           <view class="lt">
-            <image src="{{item.typeCover}}" mode='aspectFill'></image>
+            <image src="{{item.typeCover && arr[index] ? item.typeCover : defaultImage}}" mode='aspectFill'></image>
             <text>{{item.bookTypes}}</text>
           </view>
           <view class="rt">

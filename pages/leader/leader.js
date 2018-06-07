@@ -12,7 +12,8 @@ Page({
     ],
     flag: false,
     animationData: {},
-    isReLoad: false //判断是否从首页进来
+    isReLoad: false, //判断是否从首页进来
+    hasRefreshResult: true //是否刷新有结果
   },
   /**
    * 请求数据
@@ -22,15 +23,26 @@ Page({
       url: 'https://www.easy-mock.com/mock/5a23a9a2ff38a436c591b6fa/getArticInfo',
       success: res => {
         let list = res.data.data.index;
+        if (typeof cb === 'function') {
+          cb()
+        }
+        if (list.length === this.data.bookList.length) { //上滑刷新没有数据直接返回
+          this.setData({
+            hasRefreshResult: false
+          })
+          setTimeout(() =>{
+            this.setData({
+              hasRefreshResult: true
+            })
+          },1500)
+          return
+        }
         list.forEach(item => {
           item.thumbUrl = this.data.imageUrls[0];
         })
         this.setData({
           bookList: list
         })
-        if (typeof cb === 'function') {
-          cb()
-        }
       }
     })
   },
@@ -127,10 +139,21 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    if (res.from === 'menu') {
-      return {
-        title: '早读',
-        path:'/pages/stack/stack',
+    // if (res.from === 'menu') {
+    //   return {
+    //     title: '早读',
+    //     path:'/pages/stack/stack',
+    //   }
+    // }
+    let shareObj = {
+      title: '早读',
+      imgUrl: '',
+      path: `/pages/leader/leader`,
+      success: function (res) { //成功的回调
+        wx.showModal({
+          title: '成功分享',
+          content: res,
+        })
       }
     }
   }

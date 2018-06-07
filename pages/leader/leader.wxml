@@ -1,4 +1,6 @@
 <view  class="container">
+<!--没有更多内容的提示-->
+  <refresh-tip wx:if="{{!hasRefreshResult}}"></refresh-tip>
   <view class="container-wrap">
   <!--页标题  -->
     <!--内容区域  -->
@@ -7,24 +9,26 @@
         <text>领读</text>
       </view>
        <view wx:for="{{bookList}}" wx:for-item="item" wx:key="item" class="container-scroll-content">
-        <navigator url="stories/stories?id={{index}}" hover-class="none">
           <navigator url="authors/authors?authorname={{item.userName}}" hover-class="none">
             <view class="container-scroll-content-item">
                 <image src="{{item.headImg}}" lazy-load="true"></image>
                 <text>{{item.userName}}</text>
             </view>
           </navigator>
-          
-          <view class="container-scroll-content-banner-img">
-              <image src="{{item.bannerImg}}" mode="aspectFill" lazy-load="true"></image>
+          <navigator url="stories/stories?id={{index}}" hover-class="none">
+            <view class="container-scroll-content-item-nav">
+              <view class="container-scroll-content-banner-img">
+                <image src="{{item.bannerImg}}" mode="aspectFill" lazy-load="true"></image>
+              </view>
+              <view class="container-scroll-content-title"> 
+                <text>{{item.articTitle}}</text>
+              </view>
             </view>
-          <view class="container-scroll-content-title"> 
-            <text>{{item.articTitle}}</text>
-          </view>
-          
-          <view class="container-scroll-content-introduct">
-            {{item.articContent}}
-          </view>
+            <view class="container-scroll-content-introduct">
+              {{item.articContent}}
+            </view>
+          </navigator>
+            
 
           <view class="container-scroll-content-footer">
             <view>
@@ -35,7 +39,7 @@
               <image src="{{item.thumbUrl}}" mode="aspectFill" lazy-load="true"></image>
             </view>
           </view>
-        </navigator>
+        <!-- </navigator> -->
       </view> 
     </scroll-view>
     <!--内容区域结束  -->

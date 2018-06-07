@@ -21,7 +21,7 @@ Page({
       wx.switchTab({
         url: '../leader/leader'
       })
-    },3000)
+    },2000)
     
     if (app.globalData.userInfo) {
       this.setData({

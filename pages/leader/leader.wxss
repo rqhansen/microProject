@@ -41,8 +41,9 @@
   margin-right: 20rpx;
   border-radius: 50%;
 }
-.container-scroll-content-banner-img {
-  margin-top: 14rpx;
+.container-scroll-content-item-nav {
+  padding-top: 14rpx;
+  margin-bottom: 32rpx; 
 }
 .container-scroll-content-banner-img image {
   width: 100%;
@@ -59,7 +60,6 @@
 .container-scroll-content-introduct {
   width: 100%;
   line-height: 48rpx; 
-  margin-bottom: 32rpx; 
   font-size: 32rpx;
   color: #7f7f7f;
   overflow:hidden;

@@ -7,6 +7,14 @@ Page({
     bookList: [],
   },
   /**
+   * 书籍详情调到log页
+   */
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../../logs/logs',
+    })
+  },
+  /**
    * 获取数据
    */
   getData: function (callback,index) {
@@ -14,7 +22,8 @@ Page({
       url: 'https://www.easy-mock.com/mock/5a23a9a2ff38a436c591b6fa/getArticInfo',
       success: function (res){
         wx.hideLoading();
-        call(res.data.data,index)
+        console.log(res.data.data);
+        callback(res.data.data,index)
       }
     })
   },
@@ -23,7 +32,7 @@ Page({
    */
   init: function (data,index) {
       this.setData({
-        bookList: data.stack[index].list.bookList
+        bookList: data.stack[index].List.bookList
       })
   },
   /**
@@ -84,5 +93,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  }
+  },
 })

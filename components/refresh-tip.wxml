@@ -1,0 +1,8 @@
+<!--components/components.wxml-->
+<view class="container">
+  <view class="container-wrap">
+    <text>没有更多内容了</text>
+  </view>
+  <slot></slot>
+</view>
+

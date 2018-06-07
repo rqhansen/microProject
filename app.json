@@ -11,10 +11,12 @@
     "pages/mine/mine"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "早读",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "white",
+    "onReachBottomDistance":50
   },
   "tabBar": {
     "color":"#999",

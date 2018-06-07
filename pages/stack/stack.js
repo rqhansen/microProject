@@ -7,8 +7,13 @@ Page({
    */
   data: {
     stack: [],
-    scrollHeight: 0,
-    animationData: ''
+    screenHeight: 0, //屏幕高度
+    clientHeight: 0, //可见区域高度
+    arr: [],
+    arrHeight:[],
+    animationData: '',
+    defaultImage: '../../assets/images/start.jpg',
+    hasRefreshResult: true
   },
   /**
    * 获取数据
@@ -23,7 +28,7 @@ Page({
           wx.stopPullDownRefresh();
         } 
         if(typeof cd === 'function') {
-          cd(res.data.data);
+          cd(res.data.data,flag);
         }
       }
     })
@@ -31,17 +36,40 @@ Page({
   /**
    * 初始化数据
    */
-  init: function (data) {
+  init: function (data,flag) {
+    if(data.stack.length === this.data.stack.length){
+      this.setData({
+        hasRefreshResult: false
+      })
+      setTimeout(() => {
+        this.setData({
+          hasRefreshResult: true
+        })
+      }, 1500)
+      return 
+    }
     let that = this;
-    this.setData({
-      stack: data.stack
-    })
     wx.getSystemInfo({ //异步？
       success: function (res) {
         that.setData({
-          scrollHeight: res.windowHeight //获取scroll-view的高度
+          screenHeight: res.screenHeight, //计算屏幕高度
+          clientHeight: res.windowHeight //可见区域的高度
         })
       }
+    })
+    let arrHeight = [];
+    let arr = [];
+    data.stack.forEach((item,i) =>{
+      arrHeight[i] = i * (this.data.screenHeight / 667) * 91;
+      arr[i] = false;
+      if (arrHeight[i] < this.data.clientHeight || (flag && i<=this.data.stack.length)) {
+        arr[i] = true;
+      }
+    })
+    this.setData({
+      stack: data.stack,
+      arrHeight: arrHeight,
+      arr: arr
     })
   },
   /**
@@ -104,7 +132,7 @@ Page({
     this.setData({
       animationData: animation
     })
-    this.getData(this.init);
+    this.getData(this.init,true);
   },
 
   /**
@@ -112,5 +140,21 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  /**
+ * 监听页面滚动
+ */
+  onPageScroll: function (res) {
+    let tempArr = this.data.arr;
+    for (let i =0 ,len = this.data.stack.length;i < len;i++) {
+      if(this.data.arrHeight[i] < res.scrollTop + this.data.clientHeight) {
+        if(!this.data.arr[i]) {
+          tempArr[i] = true;
+          this.setData({
+            arr:tempArr 
+          })
+        }
+      }
+    }
   }
 })
