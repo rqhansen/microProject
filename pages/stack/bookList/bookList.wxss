@@ -1,3 +1,6 @@
+.search-wrap {
+  margin-bottom: 30rpx;
+}
 .container-wrap {
   width: 100%;
 }

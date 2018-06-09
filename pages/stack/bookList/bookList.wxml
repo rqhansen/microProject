@@ -1,4 +1,7 @@
 <view class="container">
+  <view class="search-wrap">
+    <search></search>
+  </view>
   <view class="container-wrap">
       <view class="container-list" wx:for="{{bookList}}" wx:key="{{item}}" bindtap="bindViewTap">
         <view class="lf">
