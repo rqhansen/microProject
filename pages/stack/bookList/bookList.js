@@ -7,6 +7,10 @@ Page({
     bookList: [],
   },
   /**
+   * 搜索
+   */
+
+  /**
    * 书籍详情调到log页
    */
   bindViewTap: function () {
