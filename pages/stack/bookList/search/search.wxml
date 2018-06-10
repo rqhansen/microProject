@@ -1,8 +1,8 @@
 <!--pages/stack/bookList/search.wxml-->
 <view class="container">
   <view class="search-wrap">
-    <search search-class="custom-search">
-      <view class="btn-wrap"><button plain="true" hover-class="hover-btn" >取消</button></view>
+    <search search-class="custom-search" bind:value="{{inputVal}}" >
+      <view class="btn-wrap"><button plain="true" hover-class="hover-btn" bindtap="clear">取消</button></view>
     </search>
   </view>
   <view>

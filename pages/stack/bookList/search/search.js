@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    inputVal: ''
+  },
+  /**
+   * 清除数据
+   */
+  clear: function () {
+    if(this.data.inputVal) {
+      this.setData({
+        inputVal: ''
+      })
+    }
   },
 
   /**

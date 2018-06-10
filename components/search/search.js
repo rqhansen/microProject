@@ -5,7 +5,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-  
+    inputVal: { //输入的值
+      type:String,
+      value: ''
+    }
   },
 
   /**
