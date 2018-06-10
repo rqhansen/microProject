@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/leader/leader",
     "pages/leader/authors/authors",
@@ -8,45 +8,46 @@
     "pages/stack/stack",
     "pages/stack/bookList/bookList",
     "pages/bookdesk/bookdesk",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/stack/bookList/search/search"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "早读",
-    "navigationBarTextStyle":"black",
+    "navigationBarTextStyle": "black",
     "backgroundColor": "white",
-    "onReachBottomDistance":50
+    "onReachBottomDistance": 50
   },
   "tabBar": {
-    "color":"#999",
-    "selectedColor":"#444",
-    "backgroundColor":"#fff",
-    "borderStyle":"#e0e0e0",
-    "list":[
+    "color": "#999",
+    "selectedColor": "#444",
+    "backgroundColor": "#fff",
+    "borderStyle": "#e0e0e0",
+    "list": [
       {
-        "pagePath":"pages/leader/leader",
-        "iconPath":"assets/icons/lingdu.png",
-        "selectedIconPath":"assets/icons/lingdu_sel.png",
-        "text":"领读"
+        "pagePath": "pages/leader/leader",
+        "iconPath": "assets/icons/lingdu.png",
+        "selectedIconPath": "assets/icons/lingdu_sel.png",
+        "text": "领读"
       },
       {
-        "pagePath":"pages/stack/stack",
-        "iconPath":"assets/icons/stack.png",
-        "selectedIconPath":"assets/icons/stack_sel.png",
-        "text":"分类"
+        "pagePath": "pages/stack/stack",
+        "iconPath": "assets/icons/stack.png",
+        "selectedIconPath": "assets/icons/stack_sel.png",
+        "text": "分类"
       },
       {
-        "pagePath":"pages/bookdesk/bookdesk",
-        "iconPath":"assets/icons/bookdesk.png",
-        "selectedIconPath":"assets/icons/stack_sel.png",
-        "text":"书桌"
+        "pagePath": "pages/bookdesk/bookdesk",
+        "iconPath": "assets/icons/bookdesk.png",
+        "selectedIconPath": "assets/icons/stack_sel.png",
+        "text": "书桌"
       },
       {
-        "pagePath":"pages/mine/mine",
-        "iconPath":"assets/icons/mine.png",
-        "selectedIconPath":"assets/icons/mine_sel.png",
-        "text":"我的"
+        "pagePath": "pages/mine/mine",
+        "iconPath": "assets/icons/mine.png",
+        "selectedIconPath": "assets/icons/mine_sel.png",
+        "text": "我的"
       }
     ]
   }

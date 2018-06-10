@@ -1,4 +1,5 @@
 <!--components/search.wxml-->
-<view class="search">
-  <input placeholder='搜索书名/作者' type="text" confirm-type="search"  placeholder-class='placeholder-style' bindconfirm="goSearch"></input>
+<view class="search search-class">
+  <input placeholder='搜索书名/作者' type="text" confirm-type="search"  placeholder-class='placeholder-style' bindconfirm="_goSearch"></input>
+  <slot></slot>
 </view>

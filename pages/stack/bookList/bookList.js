@@ -7,6 +7,14 @@ Page({
     bookList: [],
   },
   /**
+   * 去搜索
+   */
+  goSearch:function () {
+    wx.navigateTo({
+      url: './search/search',
+    })
+  },
+  /**
    * 书籍详情调到log页
    */
   bindViewTap: function () {

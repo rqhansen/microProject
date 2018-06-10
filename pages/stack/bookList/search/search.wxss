@@ -1,0 +1,19 @@
+/* pages/stack/bookList/search.wxss */
+.search-warap {
+  width: 100%;
+  display:block;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+.custom-search {
+  flex: 1;
+  width: 80%;
+}
+.btn-wrap {
+  width:80rpx;
+  height: 60rpx;
+}
+.hover-btn {
+  background-color: #ff7614;
+}
