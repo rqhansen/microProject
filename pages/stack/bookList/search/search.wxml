@@ -1,0 +1,11 @@
+<!--pages/stack/bookList/search.wxml-->
+<view class="container">
+  <view class="search-wrap">
+    <search search-class="custom-search" bind:value="{{inputVal}}" ></search>
+    <view class="clear"><button plain="true" hover-class="hover-btn" bindtap="clear">取消</button></view>
+  </view>
+  <view>
+    <text>pages/stack/bookList/search.wxml</text>
+  </view>
+</view>
+
