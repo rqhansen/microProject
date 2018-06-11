@@ -1,11 +1,28 @@
 <!--pages/stack/bookList/search.wxml-->
 <view class="container">
   <view class="search-wrap">
-    <search search-class="custom-search" bind:value="{{inputVal}}" ></search>
+    <search search-class="custom-search" input-val="{{inputVal}}" bindtriggerValue="search" bindgosearch="focusInput"></search>
     <view class="clear"><button plain="true" hover-class="hover-btn" bindtap="clear">取消</button></view>
   </view>
-  <view>
-    <text>pages/stack/bookList/search.wxml</text>
+  <view class="container-wrap">
+      <view class="container-list" wx:for="{{resultList}}" wx:key="{{item}}" bindtap="bindViewTap">
+        <view class="lf">
+          <image src="{{item.bookCover}}"></image>
+        </view>
+        <view class="rt">
+          <view class="name"><text>{{item.bookName}}</text></view>
+          <view class="author"><text>{{item.authorName}}</text></view>
+          <view class="desc"><text>{{item.bookDes}}</text></view>
+        </view>
+      </view>
+  </view>
+  <!--未搜到结果-->
+  <view class="container-result-tip" wx:if="{{resultList&&!resultList.length}}"><text>暂未收录</text></view>
+  <!-- 搜索历史 -->
+  <view class="container-search-history" wx:if="{{!resultList&&historyWord.length}}">
+    <view class="container-search-history-item">
+      <button type="mini" plain="true" wx:for="{{historyWord}}" wx:key="{{*this}}" bindtap="searcHistory" data-key="{{item}}">{{item}}</button>
+    </view>
   </view>
 </view>
 

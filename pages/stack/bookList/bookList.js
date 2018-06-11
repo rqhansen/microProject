@@ -4,14 +4,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    index: 0,
     bookList: [],
   },
   /**
    * 去搜索
    */
   goSearch:function () {
+    if(this.data.bookList.length === 0) {
+      return 
+    }
     wx.navigateTo({
-      url: './search/search',
+      url: `./search/search?index=${this.data.index}`,
     })
   },
   /**
@@ -30,7 +34,6 @@ Page({
       url: 'https://www.easy-mock.com/mock/5a23a9a2ff38a436c591b6fa/getArticInfo',
       success: function (res){
         wx.hideLoading();
-        console.log(res.data.data);
         callback(res.data.data,index)
       }
     })
@@ -40,6 +43,7 @@ Page({
    */
   init: function (data,index) {
       this.setData({
+        index: index,
         bookList: data.stack[index].List.bookList
       })
   },

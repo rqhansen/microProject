@@ -28,7 +28,16 @@ const toslideUp = (start,end) =>{
   // animation.translateY(end).step();
   return animation;
 }
+/**
+ * 缓存数据
+ */
+const storageData = (key,word) =>{
+  let result = wx.getStorageSync(key) || [];
+  result.unshift(word.trim());
+  wx.setStorageSync(key, result);
+}
 module.exports = {
   formatTime: formatTime,
-  toslideUp: toslideUp
+  toslideUp: toslideUp,
+  storageData: storageData
 }

@@ -7,7 +7,10 @@ Component({
   properties: {
     inputVal: { //输入的值
       type:String,
-      value: ''
+      value: '',
+      observer: function (newVal,oldVal) {
+        console.log(newVal,oldVal);
+      }
     }
   },
 
@@ -22,8 +25,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _goSearch() { //搜索
+    /**
+     * 跳到搜索页
+     */
+    _goSearch() {
       this.triggerEvent('gosearch');
+    },
+    /**
+     * 搜索时传递值
+     */
+    _triggerValue(e) {
+      this.triggerEvent('triggerValue',e.detail.value);
+    },
+    _focusInput () {
+      this.triggerEvent("focusInput");
     }
   }
 })

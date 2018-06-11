@@ -1,6 +1,7 @@
 /* pages/stack/bookList/search.wxss */
 .search-wrap {
   width: 100%;
+  height: 80rpx;
 }
 .custom-search {
   float:left;
@@ -24,4 +25,65 @@
 }
 .hover-btn {
   background-color: #ff7614;
+}
+.container-wrap {
+  width: 100%;
+}
+.container-list {
+  display: flex;
+  width: 100%;
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.container-list .lf {
+  width: 176rpx;
+}
+.container-list .rt {
+  flex:1;
+  font-size: 32rpx;
+  color: #444;
+}
+.container-list .lf image {
+  width: 176rpx;
+  height: 224rpx;
+  border-radius: 14rpx;
+}
+.container-list .rt .name {
+  line-height: 60rpx;
+  margin-left: 18rpx;
+}
+.container-list .rt .author {
+  margin-left: 8rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #222;
+}
+.container-list .rt .desc {
+  margin-left: 18rpx;
+  font-size:24rpx;
+  color: #9c9a9c;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.container-result-tip {
+  display:flex;
+  width: 100%;
+  padding-top: 40rpx;
+  justify-content: center;
+  color: #ddd;
+  font-size: 28rpx;
+}
+.container-search-history {
+  width: 100%;
+  padding: 40rpx 28rpx 0;
+}
+.container-search-history-item button {
+  display:inline-block;
+  border-color:#ddd;
+  font-size: 28rpx;
+  color: #aaa;
+  margin-right: 10rpx;
 }

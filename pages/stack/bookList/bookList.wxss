@@ -17,7 +17,6 @@
 }
 .container-list .rt {
   flex:1;
-  /* padding-left: 18rpx; */
   font-size: 32rpx;
   color: #444;
 }
