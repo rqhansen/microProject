@@ -1,7 +1,7 @@
 <!--pages/stack/bookList/search.wxml-->
 <view class="container">
   <view class="search-wrap">
-    <search search-class="custom-search" input-val="{{inputVal}}" bindtriggerValue="search" bindgosearch="focusInput"></search>
+    <search search-class="custom-search" input-val="{{inputVal}}" bindtriggerValue="search" bindfocusInput="focusInput" bindoninput="inputing"></search>
     <view class="clear"><button plain="true" hover-class="hover-btn" bindtap="clear">取消</button></view>
   </view>
   <view class="container-wrap">

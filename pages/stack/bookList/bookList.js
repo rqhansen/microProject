@@ -8,9 +8,10 @@ Page({
     bookList: [],
   },
   /**
-   * 去搜索
+   * 输入框获得焦点
    */
   goSearch:function () {
+    wx.hideKeyboard();//收起键盘
     if(this.data.bookList.length === 0) {
       return 
     }

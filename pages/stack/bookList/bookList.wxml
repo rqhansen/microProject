@@ -1,6 +1,6 @@
 <view class="container">
   <view class="search-wrap">
-    <search bind:gosearch="goSearch"></search>
+    <search bindfocusInput="goSearch"></search>
   </view>
   <view class="container-wrap">
       <view class="container-list" wx:for="{{bookList}}" wx:key="{{item}}" bindtap="bindViewTap">

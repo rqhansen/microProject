@@ -12,6 +12,14 @@ Page({
     historyWord: [] //搜索历史
   },
   /**
+   * 输入框输入中
+   */
+  inputing: function (e) {
+    this.setData({
+      inputVal: e.detail
+    })
+  },
+  /**
    * 输入框获得焦点
    */
   focusInput: function () {
@@ -42,7 +50,7 @@ Page({
     this.updateData(config);
   },
   /**
-   * 搜索历史关键词
+   * 搜索历史关键词    
    */
   searcHistory: function (e) {
     let key = e.currentTarget.dataset.key;
@@ -52,6 +60,9 @@ Page({
    * 清除输入框的值
    */
   clear: function () {
+    if (!this.data.inputVal) {
+      return 
+    }
     this.setData({
       inputVal: ''
     })
@@ -78,13 +89,15 @@ Page({
    * 初始化数据
    */
   getData: function (index) {
+    this.setData({
+      historyWord: wx.getStorageSync("history")
+    })
     let that = this;
     wx.request({
       url: 'https://www.easy-mock.com/mock/5a23a9a2ff38a436c591b6fa/getArticInfo',
       success: function (res) {
         that.updateData({
           bookList: res.data.data.stack[index].List.bookList,
-          historyWord: wx.getStorageSync("history")
         });
       }
     })

@@ -1,5 +1,5 @@
 <!--components/search.wxml-->
 <view class="search search-class">
-  <input placeholder='搜索书名/作者' value="{{inputVal}}" type="text" confirm-type="search"  placeholder-class='placeholder-style' placeholder-style="placeholder-style"  bindfocus="_goSearch" bindconfirm='_triggerValue'></input>
+  <input placeholder='搜索书名/作者' value="{{inputVal}}" type="text" confirm-type="search"  placeholder-class='placeholder-style' placeholder-style="placeholder-style"  bindfocus="_focusInput" bindconfirm='_triggerValue' bindinput="_oninput"></input>
   <slot></slot>
 </view>
